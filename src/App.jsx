@@ -33,6 +33,9 @@ function App() {
       This way we ensure that we are not mutating the existing state directly, but creating a new state object with the updated searchText.
       searchText is the property in the state that holds the current value of the input field, and it will be updated every time the user types something in the input field.
       */}
+      <br />
+      <Link to='/use-effect-demo'>Go to UseEffectDemo</Link>
+      <br />
       <input type='text' 
         onChange={({ target: { value } }) => setState({...state, searchText: value})} /> 
       
