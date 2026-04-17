@@ -5,7 +5,7 @@ import App from './App.jsx'
 import AppRouter from './AppRouter.jsx'
 
 createRoot(document.getElementById('root')).render(
-  //<StrictMode>
+  //<StrictMode> It does not render any visible UI, but it activates additional checks and warnings for its descendants.
     <AppRouter />
   //</StrictMode>,
 )
