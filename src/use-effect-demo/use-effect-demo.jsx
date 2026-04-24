@@ -1,8 +1,11 @@
-import { use, useEffect } from 'react';
+import { use, useEffect, useState } from 'react';
 import ProductList from './product-list';
 
 
 export default function UseEffectDemo(props) {
+
+    const [count, setCount] = useState(0);
+
     useEffect(() => {
         console.log('inside useEffect');
 
@@ -34,10 +37,26 @@ export default function UseEffectDemo(props) {
         callPizzaPromise();
 
     }, []);
+
+    const handleClick = () => {
+        setCount(count+1);
+        // console.log('count', count);
+        // if (count >0) {}
+        // setCount(count+1);
+        // console.log('count2', count);
+        setCount((prevCount) => {
+            console.log('count: ', count);
+            console.log('CorrectCount: ', prevCount);
+            return prevCount + 1;
+        });
+    }
+
     console.log('renderinggg...');
     return (
         <div>
             <h1>Let's use try Promises</h1>
+            <button onClick={() => handleClick()}>Count</button>
+            {count}
             <ProductList />
         </div>
     )

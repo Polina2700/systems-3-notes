@@ -1,4 +1,4 @@
-import { use, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function ProductList(props) {
 
@@ -7,7 +7,7 @@ export default function ProductList(props) {
         clicksCount: 2,
     }
 
-    const [state, setState] = use(initState);
+    const [state, setState] = useState(initState);
 
     useEffect(() => {
 

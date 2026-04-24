@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import GroupCard from './groups/group-card'
 import {Link } from 'react-router'
+import TopLayout from './nav-bar/TopLayout'
+import UserProvider from './context-provider/UserProvider'
 
 function App() {
 
@@ -22,8 +24,14 @@ function App() {
     { id: 4, name: "Just Group" }
   ];
 
+  const user = { username: 'Odin'};
+
   return (
     <>
+    <UserProvider user={user}>
+      <TopLayout />
+    </UserProvider>
+    
       <Link to='/counter'>Go to Counter</Link> {/* we dont have html page thats why we use link and not href. It is single page application */}
       
       {/* text field implementation by using useState, target is the input element, value is the current value of the input.
