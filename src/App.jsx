@@ -28,9 +28,8 @@ function App() {
 
   return (
     <>
-    <UserProvider user={user}>
-      <TopLayout />
-    </UserProvider>
+      <Link to='/store-counter'>Go to Store Counter</Link>
+      <br />
     
       <Link to='/counter'>Go to Counter</Link> {/* we dont have html page thats why we use link and not href. It is single page application */}
       
